@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from url_list import urls
+from url_dict import shows
 import re
 
 import requests
