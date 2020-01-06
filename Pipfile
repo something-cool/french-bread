@@ -18,6 +18,9 @@ seaborn = "*"
 requests = "*"
 jupyter = "*"
 jupyterlab = "*"
+rope = "*"
+lxml = "*"
+html5lib = "*"
 
 [requires]
 python_version = "3.6"
