@@ -15,7 +15,7 @@ shows = {
   'https://www.crunchyroll.com/hunter-x-hunter/reviews/helpful/page': [],
   'https://www.crunchyroll.com/radiant/reviews/helpful/page': [],
   'https://www.crunchyroll.com/keep-your-hands-off-eizouken/reviews/helpful/page': [],
-   'https://www.crunchyroll.com/assassins-pride/reviews/helpful/page': [],
+  'https://www.crunchyroll.com/assassins-pride/reviews/helpful/page': [],
   'https://www.crunchyroll.com/room-camp/reviews/helpful/page': [],
   'https://www.crunchyroll.com/high-school-prodigies-have-it-easy-even-in-another-world/reviews/helpful/page': []
 }
