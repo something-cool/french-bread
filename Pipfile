@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+autopep8 = "*"
 
 [packages]
 matplotlib = "*"
@@ -18,7 +19,6 @@ seaborn = "*"
 requests = "*"
 jupyter = "*"
 jupyterlab = "*"
-
 rope = "*"
 lxml = "*"
 html5lib = "*"
@@ -27,4 +27,3 @@ json = "*"
 
 [requires]
 python_version = "3.7.5"
-
