@@ -105,4 +105,4 @@ def order_66(anime_dict):
 
 
 if __name__ == "__main__":
-    order_66(shows_testing)
+    order_66(shows)
