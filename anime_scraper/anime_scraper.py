@@ -19,7 +19,7 @@ def append_page_number_to_url(url_dict, page_number=None):
 
     for link in url_dict:
         for i in range(1, page_number):
-            new_url = link + link.join(str(i))
+            new_url = link + str(i)
             url_dict[link]['url_list'].append(new_url)
     return url_dict
 
