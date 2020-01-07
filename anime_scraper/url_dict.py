@@ -106,6 +106,6 @@ shows_testing = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
-    },
+    }
 
 }
