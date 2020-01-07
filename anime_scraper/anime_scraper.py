@@ -76,7 +76,6 @@ def save_to_dictionary():
 if __name__ == "__main__":
   save_to_dictionary()
 
-
   # shows = {
   # 'https://www.crunchyroll.com/my-hero-academia/reviews/helpful/page': ([], []),
   # 'https://www.crunchyroll.com/my-hero-academia': ([], [])
