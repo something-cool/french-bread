@@ -8,8 +8,8 @@ def test_append_page_number():
   
   expected_one_piece = ['https://www.crunchyroll.com/one-piece/reviews/helpful/page1', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page2', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page3', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page4', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page5']
 
-  assert shows_testing['https://www.crunchyroll.com/my-hero-academia/reviews/helpful/page'][1] == expected_my_hero
-  assert shows_testing['https://www.crunchyroll.com/one-piece/reviews/helpful/page'][1] == expected_one_piece
+  assert shows_testing['https://www.crunchyroll.com/my-hero-academia/reviews/helpful/page']['url_list'] == expected_my_hero
+  assert shows_testing['https://www.crunchyroll.com/one-piece/reviews/helpful/page']['url_list'] == expected_one_piece
 
 # def test_append_page_number_with_page():
 #   append_page_number_to_url(shows_testing, 3)
