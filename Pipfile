@@ -18,7 +18,13 @@ seaborn = "*"
 requests = "*"
 jupyter = "*"
 jupyterlab = "*"
-csv = "*"
+
+rope = "*"
+lxml = "*"
+html5lib = "*"
+numpy = "*"
+json = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.7.5"
+
