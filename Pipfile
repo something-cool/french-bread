@@ -23,7 +23,7 @@ rope = "*"
 lxml = "*"
 html5lib = "*"
 numpy = "*"
-json = "*"
+rise = "*"
 
 [requires]
 python_version = "3.7.5"
