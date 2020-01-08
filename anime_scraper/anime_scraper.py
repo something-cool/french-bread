@@ -99,7 +99,7 @@ def save_to_csv(anime_dict):
     try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['show_title', 'review', 'rating'])
+            writer.writerow(['show_title', 'review', 'rating','genre'])
             for key in anime_dict:
                 for _ in anime_dict[key]:
                     reviews = anime_dict[key]['reviews']
