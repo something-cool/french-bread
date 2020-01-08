@@ -4,6 +4,7 @@ import json
 import csv
 import requests
 import re
+import time
 
 
 def append_page_number_to_url(url_dict, page_number=None):
@@ -128,3 +129,4 @@ def order_66(anime_dict):
 
 if __name__ == "__main__":
     order_66(shows)
+
