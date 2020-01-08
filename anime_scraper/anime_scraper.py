@@ -3,6 +3,7 @@ from url_dict import shows, shows_testing
 import json
 import csv
 import requests
+import re
 
 
 def append_page_number_to_url(url_dict, page_number=None):
@@ -67,6 +68,19 @@ def get_ratings(anime_dict):
     print('success')            
     return anime_dict
 
+def get_tags(anime_dict):
+  print('gathering tags...')
+  for key in anime_dict:
+      for url in anime_dict[key]['url_list']:
+          markup = requests.get(url).text
+          soup = BeautifulSoup(markup, 'html.parser')
+          tags = soup.find_all(href= re.compile('genre'))
+          for tag in tags:
+            anime_dict[key]['tags'].append(tag.text)
+          break
+          
+  print('success')              
+  return anime_dict
 
 def save_to_csv(anime_dict):
 
@@ -92,7 +106,8 @@ def save_to_csv(anime_dict):
                         show_titles = key.replace(
                             'https://www.crunchyroll.com/', "").replace('/reviews/helpful/page', "")
                         rating = anime_dict[key]['ratings'][i]
-                        writer.writerow([show_titles, review, rating])
+                        tags = anime_dict[key]['tags']
+                        writer.writerow([show_titles, review, rating, tags])
                     break
         print('successfully created new anime csv')
     except IOError:
@@ -107,8 +122,9 @@ def order_66(anime_dict):
     pages = append_page_number_to_url(anime_dict, 100)
     reviews = get_reviews(pages)
     ratings = get_ratings(reviews)
-    save_to_csv(ratings)
+    tags = get_tags(ratings)
+    save_to_csv(tags)
 
 
 if __name__ == "__main__":
-    order_66(shows)
+    order_66(shows_testing)

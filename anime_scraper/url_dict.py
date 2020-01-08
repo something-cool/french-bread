@@ -3,71 +3,98 @@ shows = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
     },
   'https://www.crunchyroll.com/black-clover/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+      
     },
   'https://www.crunchyroll.com/dr-stone/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/boruto-naruto-next-generations/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/food-wars-shokugeki-no-soma/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/welcome-to-demon-school-iruma-kun/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/fire-force/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/sword-art-online/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/naruto-shippuden/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+      
     },
   'https://www.crunchyroll.com/rezero-starting-life-in-another-world-/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/jojos-bizarre-adventure/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/that-time-i-got-reincarnated-as-a-slime/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/demon-slayer-kimetsu-no-yaiba/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   'https://www.crunchyroll.com/hunter-x-hunter/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   # 'https://www.crunchyroll.com/radiant/reviews/helpful/page': {
   #     'url_list' : [],
@@ -98,6 +125,8 @@ shows = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   # 'https://www.crunchyroll.com/ace-of-the-diamond/reviews/helpful/page': {
   #     'url_list' : [],
@@ -158,6 +187,8 @@ shows = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   # 'https://www.crunchyroll.com/we-never-learn-bokuben/reviews/helpful/page': {
   #     'url_list' : [],
@@ -303,6 +334,8 @@ shows = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
+
     },
   # 'https://www.crunchyroll.com/if-its-for-my-daughter-id-even-defeat-a-demon-lord/reviews/helpful/page': {
   #     'url_list' : [],
@@ -326,11 +359,13 @@ shows_testing = {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
     },
     'https://www.crunchyroll.com/one-piece/reviews/helpful/page': {
       'url_list' : [],
       'reviews' : [],
       'ratings' : [],
+      'tags' : []
     }
 
 }
