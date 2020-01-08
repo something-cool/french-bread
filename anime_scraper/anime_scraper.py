@@ -18,7 +18,7 @@ def append_page_number_to_url(url_dict, page_number=None):
     manually grab them once.
     '''
     page_number = page_number or 11
-    print('gathering URLs...')
+    print('generating URLs...')
     for link in url_dict:
         for i in range(1, page_number):
             new_url = link + str(i)
@@ -40,6 +40,7 @@ def get_reviews(anime_dict):
     print('gathering reviews...')
     for key in anime_dict:
         for url in anime_dict[key]['url_list']:
+            time.sleep(0.15)
             markup = requests.get(url).text
             soup = BeautifulSoup(markup, 'html.parser')
             reviews = soup.find_all('div', {'class': 'more'})
@@ -60,6 +61,7 @@ def get_ratings(anime_dict):
     print('gathering ratings...')
     for key in anime_dict:
         for url in anime_dict[key]['url_list']:
+            time.sleep(0.2)
             markup = requests.get(url).text
             soup = BeautifulSoup(markup, 'html.parser')
             ratings = soup.find_all(class_='rating-widget-static-large')
@@ -73,6 +75,7 @@ def get_tags(anime_dict):
   print('gathering tags...')
   for key in anime_dict:
       for url in anime_dict[key]['url_list']:
+          time.sleep(0.1)
           markup = requests.get(url).text
           soup = BeautifulSoup(markup, 'html.parser')
           tags = soup.find_all(href= re.compile('genre'))
@@ -99,7 +102,7 @@ def save_to_csv(anime_dict):
     try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['show_title', 'review', 'rating'])
+            writer.writerow(['show_title', 'review', 'rating', 'tags'])
             for key in anime_dict:
                 for _ in anime_dict[key]:
                     reviews = anime_dict[key]['reviews']
