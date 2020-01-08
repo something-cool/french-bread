@@ -35,6 +35,7 @@ def test_get_ratings(anime_list):
   assert type(anime_list['https://www.crunchyroll.com/one-piece/reviews/helpful/page']['ratings'][0]) == str
   assert type(anime_list['https://www.crunchyroll.com/my-hero-academia/reviews/helpful/page']['ratings'][0]) == str
 
+
 @pytest.fixture
 def anime_list():
   shows_testing = {
