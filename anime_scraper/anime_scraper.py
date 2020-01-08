@@ -98,7 +98,7 @@ def order_66(anime_dict):
     This function calls all the helper functions to produce
     the filled out csv
     '''
-    pages = append_page_number_to_url(anime_dict)
+    pages = append_page_number_to_url(anime_dict, 21)
     reviews = get_reviews(pages)
     ratings = get_ratings(reviews)
     save_to_csv(ratings)
