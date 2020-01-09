@@ -24,6 +24,7 @@ lxml = "*"
 html5lib = "*"
 numpy = "*"
 json = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.7.5"
