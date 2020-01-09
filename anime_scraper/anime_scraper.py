@@ -23,7 +23,6 @@ def append_page_number_to_url(url_dict, page_number=None):
             url_dict[link]['url_list'].append(new_url)
     return url_dict
 
-
 def get_reviews(anime_dict):
     '''
     This function takes in a formatted dictionary
@@ -63,6 +62,23 @@ def get_ratings(anime_dict):
                 anime_dict[key]['ratings'].append(rating['content'])
     return anime_dict
 
+def get_review_date(anime_dict):
+    '''
+    This function takes in a formatted dictionary
+    Similar to the above function, it iterates
+    over the url list but instead grabs the ratings,
+    which should be a string number between 1 and 5
+    '''
+    for key in anime_dict:
+        for url in anime_dict[key]['url_list']:
+            markup = requests.get(url).text
+            soup = BeautifulSoup(markup, 'html.parser')
+            review_dates_span = soup.find_all("span", {"itemprop" : "dtreviewed"})
+            for review_date in review_dates_span:
+                print(review_date.text)
+                anime_dict[key]['review_date'].append(review_date.text.replace('\n', '').strip())
+    return anime_dict
+
 
 def save_to_csv(anime_dict):
     '''
@@ -74,11 +90,11 @@ def save_to_csv(anime_dict):
     append reviews and ratings to the same row in one pass
     The initial row is for the column headers
     '''
-    csv_file = 'anime_reviews.csv'
+    csv_file = 'anime_reviews_w_review_date.csv'
     try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(['show_title', 'review', 'rating'])
+            writer.writerow(['show_title', 'review', 'rating', 'review_date'])
             for key in anime_dict:
                 for _ in anime_dict[key]:
                     reviews = anime_dict[key]['reviews']
@@ -86,7 +102,8 @@ def save_to_csv(anime_dict):
                         show_titles = key.replace(
                             'https://www.crunchyroll.com/', "").replace('/reviews/helpful/page', "")
                         rating = anime_dict[key]['ratings'][i]
-                        writer.writerow([show_titles, review, rating])
+                        review_date = anime_dict[key]['review_date']
+                        writer.writerow([show_titles, review, rating, review_date])
                     break
         print('successfully created anime csv')
     except IOError:
@@ -98,11 +115,11 @@ def order_66(anime_dict):
     This function calls all the helper functions to produce
     the filled out csv
     '''
-    pages = append_page_number_to_url(anime_dict)
+    pages = append_page_number_to_url(anime_dict, 3)
     reviews = get_reviews(pages)
     ratings = get_ratings(reviews)
-    save_to_csv(ratings)
-
+    review_date = get_review_date(ratings)
+    save_to_csv(review_date)
 
 if __name__ == "__main__":
     order_66(shows)
