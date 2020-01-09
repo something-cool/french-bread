@@ -24,6 +24,9 @@ lxml = "*"
 html5lib = "*"
 numpy = "*"
 rise = "*"
+plotply = "*"
+plotly = "*"
+wordcloud = "*"
 
 [requires]
 python_version = "3.7.5"
