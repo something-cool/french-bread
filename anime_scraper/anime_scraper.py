@@ -17,7 +17,7 @@ def append_page_number_to_url(url_dict, page_number=None):
     This allows us to grab as many links as we need while only having to 
     manually grab them once.
     '''
-    page_number = page_number or 11
+    page_number = page_number or int(input('How many pages of data would you like?'))
     print('generating URLs...')
     for link in url_dict:
         for i in range(1, page_number):
@@ -37,7 +37,7 @@ def get_reviews(anime_dict):
     The reviews are appended to a list in the dictionary
     and we return the modified dictionary.
     '''
-    print('gathering reviews...')
+    print('gathering reviews...grab a beer, this may take a moment')
     for key in anime_dict:
         for url in anime_dict[key]['url_list']:
             time.sleep(0.15)
@@ -67,7 +67,7 @@ def get_ratings(anime_dict):
             ratings = soup.find_all(class_='rating-widget-static-large')
             for rating in ratings:
                 anime_dict[key]['ratings'].append(rating['content']) #Content is an attribute of the ratings class on crunchy roll
-    
+
     print('success')            
     return anime_dict
 
@@ -84,7 +84,7 @@ def get_tags(anime_dict):
           break
           
   print('success')              
-  return anime_dict
+  return anime_dict  
 
 def save_to_csv(anime_dict):
 
@@ -97,8 +97,8 @@ def save_to_csv(anime_dict):
     append reviews and ratings to the same row in one pass
     The initial row is for the column headers
     '''
-    print('attempting to save to csv')
-    csv_file = 'more_anime_reviews.csv'
+    csv_file = input('All data retrieved. Enter a file name for your csv:') +'.csv'
+    # csv_file = 'even_more_anime_reviews.csv'
     try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.writer(csvfile)
@@ -113,7 +113,7 @@ def save_to_csv(anime_dict):
                         tags = anime_dict[key]['tags']
                         writer.writerow([show_titles, review, rating, tags])
                     break
-        print('successfully created new anime csv')
+        print(f'successfully created {csv_file}')
     except IOError:
         print('I/O error')
 
@@ -123,7 +123,7 @@ def order_66(anime_dict):
     This function calls all the helper functions to produce
     the filled out csv
     '''
-    pages = append_page_number_to_url(anime_dict, 100)
+    pages = append_page_number_to_url(anime_dict)
     reviews = get_reviews(pages)
     ratings = get_ratings(reviews)
     tags = get_tags(ratings)
@@ -131,5 +131,5 @@ def order_66(anime_dict):
 
 
 if __name__ == "__main__":
-    order_66(shows)
+    order_66(shows_testing)
 

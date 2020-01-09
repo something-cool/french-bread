@@ -7,7 +7,7 @@ my_hero_list = ['https://www.crunchyroll.com/my-hero-academia/reviews/helpful/pa
 one_piece_list = ['https://www.crunchyroll.com/one-piece/reviews/helpful/page1','https://www.crunchyroll.com/one-piece/reviews/helpful/page2', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page3','https://www.crunchyroll.com/one-piece/reviews/helpful/page4','https://www.crunchyroll.com/one-piece/reviews/helpful/page5','https://www.crunchyroll.com/one-piece/reviews/helpful/page6','https://www.crunchyroll.com/one-piece/reviews/helpful/page7','https://www.crunchyroll.com/one-piece/reviews/helpful/page8','https://www.crunchyroll.com/one-piece/reviews/helpful/page9', 'https://www.crunchyroll.com/one-piece/reviews/helpful/page10']
 
 def test_append_page_number(anime_list):
-  append_page_number_to_url(anime_list)
+  append_page_number_to_url(anime_list, 11)
 
   assert anime_list['https://www.crunchyroll.com/my-hero-academia/reviews/helpful/page']['url_list'] == my_hero_list
   assert anime_list['https://www.crunchyroll.com/one-piece/reviews/helpful/page']['url_list'] == one_piece_list
