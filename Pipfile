@@ -25,6 +25,7 @@ html5lib = "*"
 numpy = "*"
 json = "*"
 nltk = "*"
+wordcloud = "*"
 
 [requires]
 python_version = "3.7.5"
